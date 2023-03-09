@@ -48,7 +48,6 @@ func CreateTask(w http.ResponseWriter, r *http.Request) {
 
 	id := model.CreateTask(task)
 	w.Header().Set("Method", r.Method)
-	w.WriteHeader(http.StatusCreated)
 	responseMessage := fmt.Sprintf("Created record successfully and its id is %d\n", id)
 	_, err = w.Write([]byte(responseMessage))
 
